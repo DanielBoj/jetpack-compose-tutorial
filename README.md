@@ -7,10 +7,17 @@ Dentro de este repositorio se encuentra el proyecto de ejemplo para el tutorial 
 
 ## <u>Requisitos</u>
 * JDK 21 o superior
+* Android API 34 o superior
 * Gradle 8.1.0 o superior
 * Jetpack Compose 1.0.0 o superior
 * IDE recomendados: Android Studio o IntelliJ Idea
 * Familiaridad con Kotlin
+
+## <u>Uso</u>
+Para usar este proyecto, simplemente clona el repositorio y ábrelo con tu IDE favorito. Una vez abierto, puedes ejecutarlo en un emulador o dispositivo físico.
+### Ramas
++ init &rarr; Rama inicial del proyecto para probar los pasos explicados en el tutorial.
++ final &rarr; Rama final del proyecto con el código completo de todos los pasos del tutorial.
 
 ## <u>Contacto</u> 📫
 [![ProtonMail](https://img.shields.io/badge/ProtonMail-8B89CC?style=for-the-badge&logo=protonmail&logoColor=white)](dbojdev@proton.me)
