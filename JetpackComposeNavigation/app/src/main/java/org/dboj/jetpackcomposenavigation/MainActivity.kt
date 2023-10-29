@@ -6,11 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import org.dboj.jetpackcomposenavigation.ui.screens.OverviewScreen
+import org.dboj.jetpackcomposenavigation.navigation.AppNavigation
 import org.dboj.jetpackcomposenavigation.ui.theme.JetpackComposeNavigationTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,7 +18,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             JetpackComposeNavigationTheme {
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    OverviewScreen()
+                    AppNavigation()
                 }
             }
         }
@@ -32,7 +31,7 @@ class MainActivity : ComponentActivity() {
 fun GreetingPreview() {
     JetpackComposeNavigationTheme {
         Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-            OverviewScreen()
+            AppNavigation()
         }
     }
 }

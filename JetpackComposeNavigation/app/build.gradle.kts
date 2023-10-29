@@ -66,4 +66,9 @@ dependencies {
 
     // Versión más reciente de compose compiler
     implementation("androidx.compose.compiler:compiler:1.5.3")
+
+    // Navegación mediante compose
+    implementation("androidx.navigation:navigation-compose:2.7.4")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.4")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.4")
 }
