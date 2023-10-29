@@ -12,6 +12,8 @@ import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import org.dboj.jetpackcomposenavigation.R
+import org.dboj.jetpackcomposenavigation.navigation.AppDestination
+import org.dboj.jetpackcomposenavigation.navigation.navigateSingleTopTo
 
 @Composable
 fun OverviewScreen(navController: NavController) {
@@ -46,7 +48,10 @@ fun OverviewScreenBodyContent(navController: NavController) {
     ) {
         Text(text = "Jetpack Compose Navigation Simple Example")
         Button(
-            onClick = { navController.navigate("detail_screen") }
+            onClick = { navController.navigateSingleTopTo(
+                route = AppDestination.Detail.route +
+                        "/Soy un texto enviado como parámetro!")
+            }
         ) {
             Text(text = "Go to Detail Screen ->")
         }

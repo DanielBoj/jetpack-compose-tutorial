@@ -1,6 +1,7 @@
 package org.dboj.jetpackcomposenavigation.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType.Companion.StringType
@@ -17,15 +18,19 @@ fun AppNavigation() {
 
     NavHost(
         navController = navController,
-        startDestination = AppDestination.Overview.route + "/{text}",
-        navArgument(name = "text") { StringType }
+        startDestination = AppDestination.Overview.route
     ) {
         composable(AppDestination.Overview.route) { OverviewScreen(navController) }
-        composable(AppDestination.Detail.route) { DetailScreen(navController) }
+        composable(AppDestination.Detail.route  + "/{text}",
+            arguments = listOf(navArgument("text") {
+                type = StringType
+                // defaultValue = "default" // Puede interesarnos pasar un valor por defecto
+            })
+        ) { DetailScreen(navController, it.arguments?.getString("text")) }
     }
 }
 
-fun NavHostController.navigateSingleTopTo(route: String) {
+fun NavController.navigateSingleTopTo(route: String) {
     this.navigate(route) {
         popUpTo(
             this@navigateSingleTopTo.graph.findStartDestination().id
